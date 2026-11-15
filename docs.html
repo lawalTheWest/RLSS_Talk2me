@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docs — Talk2Me</title>
+  <meta name="description" content="Install Talk2Me, make your first call, configure a TURN relay, and troubleshoot connection problems.">
+  <meta name="theme-color" content="#070B10">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" width="30" height="30" alt="">
+        Talk2Me
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how">How it works</a></li>
+        <li><a href="docs.html" aria-current="page">Docs</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="https://github.com/lawalTheWest/talk2me">GitHub</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="btn btn-ghost btn-small" href="index.html">Overview</a>
+        <a class="btn btn-primary btn-small" href="https://github.com/lawalTheWest/talk2me/releases/latest">Download</a>
+        <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-head">
+      <div class="container">
+        <p class="eyebrow">Documentation</p>
+        <h1>Install, call, troubleshoot.</h1>
+        <p>
+          Everything needed to get two to four Android phones talking, plus what
+          to do when a network refuses to cooperate.
+        </p>
+      </div>
+    </div>
+
+    <div class="container doc-layout">
+      <aside class="doc-nav">
+        <h2>On this page</h2>
+        <ul>
+          <li><a href="#install">Install</a></li>
+          <li><a href="#first-call">Your first call</a></li>
+          <li><a href="#network">Network and TURN</a></li>
+          <li><a href="#troubleshooting">Troubleshooting</a></li>
+          <li><a href="#battery">Battery and OEMs</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#build">Build from source</a></li>
+          <li><a href="#verify">Verify the APK</a></li>
+        </ul>
+      </aside>
+
+      <article class="doc">
+        <section id="install">
+          <h2>Install</h2>
+          <p>
+            Talk2Me is distributed as a signed APK from
+            <a href="https://github.com/lawalTheWest/talk2me/releases/latest">GitHub Releases</a>.
+            There is no Play Store listing and no account to create.
+          </p>
+
+          <ol>
+            <li>Download <code>Talk2Me-v1.0.apk</code> (about 41 MB) on the phone.</li>
+            <li>Open the downloaded file. If Android asks, allow your browser or file manager to install unknown apps.</li>
+            <li>Confirm the install. On MIUI/HyperOS you may see an extra confirmation dialog; approve it.</li>
+            <li>Open Talk2Me and allow the <strong>microphone</strong> permission.</li>
+            <li>Allow <strong>notifications</strong> on Android 13+ so the ongoing-call controls are visible.</li>
+          </ol>
+
+          <div class="callout info">
+            <span class="icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8v.1"/></svg>
+            </span>
+            <div>
+              <h3>Upgrading from a debug build?</h3>
+              <p>
+                Debug and release builds use different signing keys, so Android
+                refuses to update one over the other. Uninstall the old app first.
+                That clears saved app data, including any TURN credentials.
+              </p>
+            </div>
+          </div>
+
+          <h3>Requirements</h3>
+          <dl class="kbd-list">
+            <dt>Android</dt><dd>8.0 (API 26) or newer</dd>
+            <dt>Hardware</dt><dd>a microphone; no camera or GPS needed</dd>
+            <dt>Network</dt><dd>internet on every phone for signaling</dd>
+            <dt>Size</dt><dd>~41 MB installed APK; arm64, armv7, and x86_64</dd>
+          </dl>
+        </section>
+
+        <section id="first-call">
+          <h2>Your first call</h2>
+          <p>
+            Both people open Talk2Me. One starts the call; everyone else joins
+            with the same code. There is no ringing and no incoming-call screen.
+          </p>
+
+          <ol>
+            <li>On the first phone, tap <strong>Start a call</strong>. An eight-character code appears, such as <code>K7M2-XQ9F</code>.</li>
+            <li>Send that code to the other people. The copy button and Android share sheet are both fine.</li>
+            <li>On each other phone, tap <strong>Join a call</strong>, type the code, and continue.</li>
+            <li>Wait for the call screen. On the same Wi-Fi, audio usually starts within a few seconds.</li>
+          </ol>
+
+          <p>
+            While connected you can mute, switch between earpiece and speaker, and
+            see a call timer. The ongoing notification also has <strong>Mute</strong>
+            and <strong>End</strong> actions, so you can control the call without
+            reopening the app.
+          </p>
+
+          <div class="callout info">
+            <span class="icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8v.1"/></svg>
+            </span>
+            <div>
+              <h3>Test on the same Wi-Fi first</h3>
+              <p>
+                If a call fails on the same network, the problem is not NAT. Test
+                there before adding a relay so you know which variable changed.
+              </p>
+            </div>
+          </div>
+
+          <h3>Group behaviour</h3>
+          <ul>
+            <li>The room holds up to <strong>four people</strong>. A fifth phone sees “That call is already full (4 people max).”</li>
+            <li>Hanging up removes only that person; everyone else stays connected.</li>
+            <li>Late joiners are negotiated in while the existing pairs keep talking.</li>
+            <li>Locking the screen or pressing Back keeps the call alive. Swiping the app from Recents ends it.</li>
+          </ul>
+        </section>
+
+        <section id="network">
+          <h2>Network and TURN</h2>
+          <p>
+            WebRTC first tries a direct path between the phones. On most home
+            Wi-Fi that works. Mobile carriers, CGNAT, and corporate firewalls
+            often block it, and then audio needs a <strong>TURN relay</strong> to
+            forward the traffic.
+          </p>
+          <p>
+            Talk2Me ships with STUN but no relay credentials, because there is no
+            free, credential-less TURN service that stays online. You can paste
+            credentials from any provider; they are stored only on the phone.
+          </p>
+
+          <div class="callout">
+            <span class="icon-badge">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17.2v.1"/></svg>
+            </span>
+            <div>
+              <h3>What a relay does, and does not, see</h3>
+              <p>
+                A TURN server forwards encrypted packets. It can see that two IP
+                addresses are talking and how much data they send, but not the
+                room code, the signaling contents, or the audio.
+              </p>
+            </div>
+          </div>
+
+          <h3>Using Metered Open Relay (free tier)</h3>
+          <ol>
+            <li>Create a free account at <a href="https://dashboard.metered.ca/signup?tool=turnserver">dashboard.metered.ca</a>.</li>
+            <li>Open your project and find the <strong>TURN Server</strong> or <strong>Open Relay</strong> credentials.</li>
+            <li>Copy the <strong>username</strong>, <strong>password</strong>, and the <code>turn:</code> / <code>turns:</code> URLs.</li>
+          </ol>
+
+          <p>
+            If the dashboard only shows an API key, open the credentials endpoint
+            in a browser and copy the values from the JSON it returns:
+          </p>
+
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>https://YOURAPPNAME.metered.live/api/v1/turn/credentials?apiKey=YOUR_API_KEY</code></pre>
+          </div>
+
+          <p>Typical Open Relay values look like this:</p>
+
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>turn:global.relay.metered.ca:80
+turn:global.relay.metered.ca:443
+turns:global.relay.metered.ca:443?transport=tcp</code></pre>
+          </div>
+
+          <p>
+            In Talk2Me, open <strong>Network settings</strong> from the home
+            screen and paste:
+          </p>
+
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>TURN URLs: turn:global.relay.metered.ca:80, turn:global.relay.metered.ca:443, turns:global.relay.metered.ca:443?transport=tcp
+Username:  &lt;from the dashboard or JSON&gt;
+Password:  &lt;from the dashboard or JSON&gt;</code></pre>
+          </div>
+
+          <p>
+            Save, then repeat with the <strong>exact same values on every phone</strong>.
+            The home footer changes to “Network settings · relay on” when a relay
+            is configured.
+          </p>
+
+          <p>
+            Metered's current free allowance is around <strong>500 MB per month</strong>
+            (check the usage meter in your dashboard). That is roughly 14 hours of
+            relayed 1:1 audio. Group calls relay more paths, so they use it faster.
+          </p>
+
+          <div class="callout danger">
+            <span class="icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m9 9 6 6"/><path d="m15 9-6 6"/></svg>
+            </span>
+            <div>
+              <h3>Old public credentials no longer work</h3>
+              <p>
+                The widely copied <code>openrelayproject</code> username and
+                password are rejected by Metered's current servers. Do not paste
+                them; they will look configured but produce no relay candidates.
+              </p>
+            </div>
+          </div>
+
+          <div class="callout info">
+            <span class="icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8v.1"/></svg>
+            </span>
+            <div>
+              <h3>Credentials that expire</h3>
+              <p>
+                API-key endpoints issue short-lived credentials. If calls stop
+                relaying after a while, fetch fresh values and paste them again.
+                Static username/password credentials, when your dashboard offers
+                them, do not expire.
+              </p>
+            </div>
+          </div>
+
+          <h3>Alternative: Xirsys</h3>
+          <p>
+            Xirsys offers a free Developer account with 500 MB/month and static
+            TURN credentials. Create a channel in the dashboard, then copy its
+            username, credential, and <code>turn:</code> URLs into Network
+            settings. After the 30-day trial the account drops to one region, so
+            confirm the credential panel still shows values.
+          </p>
+
+          <h3>Check the relay before blaming the app</h3>
+          <p>
+            Paste the same URL, username, and password into a TURN tester such as
+            <a href="https://www.metered.ca/turn-server-testing">metered.ca/turn-server-testing</a>.
+            If the tester cannot allocate a relay, Talk2Me will not either.
+          </p>
+        </section>
+
+        <section id="troubleshooting">
+          <h2>Troubleshooting</h2>
+          <p>
+            The error screen shows “Something went wrong” as its title. The line
+            underneath is the useful part; it identifies which stage failed.
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Message</th><th>Meaning</th><th>What to try</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>Could not connect. Try the same Wi-Fi, or add a TURN relay in Network settings.</code></td>
+                  <td>Both phones found each other, but no audio path could be established before the timeout.</td>
+                  <td>Retry on the same Wi-Fi. If they are on different networks or mobile data, configure TURN. Make sure both phones have working internet.</td>
+                </tr>
+                <tr>
+                  <td><code>Could not start the call audio.</code></td>
+                  <td>Microphone capture or the audio device failed to start.</td>
+                  <td>Check microphone permission, close other calling apps, then retry.</td>
+                </tr>
+                <tr>
+                  <td><code>Could not start the audio engine.</code></td>
+                  <td>WebRTC failed to initialize on this device.</td>
+                  <td>Force-stop and reopen the app. If it persists, reinstall the APK and reboot the phone.</td>
+                </tr>
+                <tr>
+                  <td><code>Could not reach the signaling service.</code></td>
+                  <td>All public MQTT brokers were unreachable.</td>
+                  <td>Check internet access or try a different network. Retry in a moment.</td>
+                </tr>
+                <tr>
+                  <td><code>That call is already full (4 people max).</code></td>
+                  <td>Four people are already in the room.</td>
+                  <td>Wait for someone to leave, or start a second room with a new code.</td>
+                </tr>
+                <tr>
+                  <td><code>Microphone permission is required to make a call.</code></td>
+                  <td>The mic permission was denied.</td>
+                  <td>Grant it in Android Settings → Apps → Talk2Me → Permissions, then retry.</td>
+                </tr>
+                <tr>
+                  <td><code>Signal lost — trying to reconnect</code></td>
+                  <td>The connection blipped, for example during a Wi-Fi to mobile handoff.</td>
+                  <td>Wait; the app restarts ICE per peer. Persistent trouble usually means the network needs TURN.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Nothing happens after “Found 1 person”</h3>
+          <p>
+            Discovery worked, so signaling is fine. Give it up to 30 seconds on a
+            difficult network, then retry once. If it fails again, the media path
+            is blocked and a TURN relay is the fix.
+          </p>
+
+          <h3>Collecting logs for a bug report</h3>
+          <p>
+            With USB debugging enabled, this shows the app's own logs plus crashes:
+          </p>
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>adb logcat -s "Talk2Me" "Talk2Me/Call" "Talk2Me/Mqtt" "Talk2Me/WebRTC" AndroidRuntime:E</code></pre>
+          </div>
+          <p>
+            Include your Android version, the phones' network setup (same Wi-Fi,
+            different networks, mobile data), and the exact text under the error
+            title.
+          </p>
+        </section>
+
+        <section id="battery">
+          <h2>Battery and OEM restrictions</h2>
+          <p>
+            During a call, Talk2Me holds a partial CPU wake lock and a Wi-Fi lock,
+            and runs a microphone foreground service. That keeps discovery,
+            negotiation, and audio alive while the screen is locked.
+          </p>
+          <ul>
+            <li>Set Talk2Me's battery usage to <strong>unrestricted</strong>.</li>
+            <li>On MIUI/HyperOS, enable autostart and allow background activity.</li>
+            <li>On Samsung and other aggressive skins, exclude Talk2Me from sleeping apps.</li>
+            <li>Keep the ongoing notification enabled; it is the call's foreground-service anchor.</li>
+          </ul>
+          <p>
+            Pressing Back or locking the screen does not end the call. Swiping the
+            app away from Recents does, because Android stops the service.
+          </p>
+        </section>
+
+        <section id="privacy">
+          <h2>Privacy</h2>
+          <p>
+            No account, no analytics, no call records. The public MQTT broker only
+            sees an opaque topic and encrypted SDP/ICE payloads. Audio goes direct
+            between phones, or through your own TURN provider if configured.
+          </p>
+          <p>
+            Read the full <a href="privacy.html">privacy note</a> for what leaves
+            the device and which third parties are involved.
+          </p>
+        </section>
+
+        <section id="build">
+          <h2>Build from source</h2>
+          <p>
+            You need JDK 17 and Android SDK platform 35. The Gradle wrapper is
+            included, so no system Gradle install is required.
+          </p>
+
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>git clone https://github.com/lawalTheWest/talk2me.git
+cd talk2me
+export ANDROID_HOME=/path/to/android-sdk
+./gradlew assembleDebug
+# app/build/outputs/apk/debug/app-debug.apk</code></pre>
+          </div>
+
+          <h3>Run the tests</h3>
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>./gradlew testDebugUnitTest</code></pre>
+          </div>
+
+          <h3>Signed release build</h3>
+          <p>
+            Create <code>keystore.properties</code> in the project root. Both it
+            and the keystore are git-ignored:
+          </p>
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>storeFile=app/talk2me-release.keystore
+storePassword=your-store-password
+keyAlias=talk2me
+keyPassword=your-key-password</code></pre>
+          </div>
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>./gradlew assembleRelease
+# app/build/outputs/apk/release/app-release.apk (signed, zipaligned)</code></pre>
+          </div>
+          <p>
+            Back up the keystore and passwords. Losing them means future versions
+            cannot update an installed copy in place.
+          </p>
+        </section>
+
+        <section id="verify">
+          <h2>Verify the APK</h2>
+          <p>
+            The v1.0 release APK is signed with a dedicated key
+            (<code>CN=Talk2Me</code>). Its SHA-256 is:
+          </p>
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>02a5f42e1fb66465b8e65e35df1cbcf01c5454d5e8a0d5161fcecf5cfa134425</code></pre>
+          </div>
+          <p>Compare a downloaded file on Linux or macOS:</p>
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>sha256sum Talk2Me-v1.0.apk</code></pre>
+          </div>
+          <p>On Windows PowerShell:</p>
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>Get-FileHash .\Talk2Me-v1.0.apk -Algorithm SHA256</code></pre>
+          </div>
+          <p>If you have Android build tools, the signer can be checked too:</p>
+          <div class="code">
+            <button class="copy-btn" type="button">Copy</button>
+            <pre><code>apksigner verify --print-certs Talk2Me-v1.0.apk</code></pre>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/logo.svg" width="30" height="30" alt="">
+            Talk2Me
+          </a>
+          <p>A tiny serverless audio-call app for Android. Built with Kotlin, Jetpack Compose, and WebRTC.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#limitations">Limitations</a></li>
+            <li><a href="https://github.com/lawalTheWest/talk2me/releases/latest">Download</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Docs</h4>
+          <ul>
+            <li><a href="docs.html#install">Install</a></li>
+            <li><a href="docs.html#network">TURN setup</a></li>
+            <li><a href="docs.html#troubleshooting">Troubleshooting</a></li>
+            <li><a href="docs.html#build">Build from source</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://github.com/lawalTheWest/talk2me">GitHub</a></li>
+            <li><a href="https://github.com/lawalTheWest/talk2me/issues">Issues</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="https://github.com/lawalTheWest/talk2me/blob/main/LICENSE">MIT license</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Talk2Me. Not affiliated with Google, Metered, or Xirsys.</span>
+        <span>No cookies. No analytics. Just static HTML.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

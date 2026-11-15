@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Talk2Me — serverless group audio calls for Android</title>
+  <meta name="description" content="Talk2Me is a free, open-source Android app for audio calls between one and four phones. Direct peer-to-peer WebRTC audio, no accounts, and nothing to host.">
+  <meta name="theme-color" content="#070B10">
+  <meta property="og:title" content="Talk2Me — serverless group audio calls">
+  <meta property="og:description" content="Up to four Android phones, one room code, direct encrypted audio. No server, no accounts, no sign-up.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" width="30" height="30" alt="">
+        Talk2Me
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="https://github.com/lawalTheWest/talk2me">GitHub</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="btn btn-ghost btn-small" href="docs.html">Documentation</a>
+        <a class="btn btn-primary btn-small" href="https://github.com/lawalTheWest/talk2me/releases/latest">Download</a>
+        <button class="nav-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <div>
+          <p class="hero-badge">
+            <span class="dot" aria-hidden="true"></span>
+            <strong>v1.0</strong>
+            <span aria-hidden="true">·</span>
+            <span>MIT licensed</span>
+            <span aria-hidden="true">·</span>
+            <span>Android 8.0+</span>
+          </p>
+
+          <h1>Small group calls.<br>No server. <em>No sign-up.</em></h1>
+
+          <p class="hero-lede">
+            Talk2Me connects up to four Android phones directly over a WebRTC mesh.
+            Share an eight-character code and talk — audio travels phone to phone,
+            end-to-end encrypted, with nothing to host and no account to create.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://github.com/lawalTheWest/talk2me/releases/latest">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 20h16"/>
+              </svg>
+              Download the APK
+            </a>
+            <a class="btn btn-ghost" href="docs.html">Read the docs</a>
+          </div>
+
+          <ul class="hero-meta">
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
+              Signed release, 41 MB
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
+              No account, no analytics
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
+              Audio only
+            </li>
+          </ul>
+        </div>
+
+        <div class="phone-wrap" aria-hidden="true">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="phone-status">
+                <span>9:41</span>
+                <span class="pill"></span>
+                <span>5G</span>
+              </div>
+
+              <p class="phone-kicker">Group call</p>
+              <p class="phone-code">K7M2-XQ9F</p>
+
+              <div class="avatars">
+                <span class="avatar mint">A</span>
+                <span class="avatar blue">B</span>
+                <span class="avatar amber">C</span>
+              </div>
+
+              <p class="phone-timer">04:12</p>
+
+              <div class="phone-controls">
+                <span class="ctrl mint">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M8 21h8"/></svg>
+                </span>
+                <span class="ctrl">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M17 8a6 6 0 0 1 0 8"/></svg>
+                </span>
+                <span class="ctrl end">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 10.5c5.5-4.5 11.5-4.5 17 0l-1.8 3-3.7-1v3a11 11 0 0 0-6 0v-3l-3.7 1-1.8-3Z"/></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Talk2Me at a glance">
+      <div class="container stats-grid">
+        <div class="stat"><strong>4</strong><span>people per call</span></div>
+        <div class="stat"><strong>0</strong><span>servers to run</span></div>
+        <div class="stat"><strong>0</strong><span>accounts required</span></div>
+        <div class="stat"><strong>100%</strong><span>peer-to-peer audio</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What it does</p>
+          <h2>Everything a small call needs. Nothing it doesn't.</h2>
+          <p>
+            No dashboard, no invites, no monthly bill. Talk2Me is a deliberately
+            small app that does one thing: put a few phones on the same audio call.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card reveal">
+            <span class="icon-badge">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/></svg>
+            </span>
+            <h3>Straight from phone to phone</h3>
+            <p>
+              Audio is direct WebRTC. The public MQTT broker only helps phones
+              find each other and never carries your voice.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="icon-badge">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.5a3 3 0 0 1 0 5.8"/><path d="M17.5 14.5A5.5 5.5 0 0 1 21 20"/></svg>
+            </span>
+            <h3>Four people, full mesh</h3>
+            <p>
+              Each phone holds one encrypted connection per participant. Join or
+              leave mid-call; every pair renegotiates on its own.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="icon-badge">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg>
+            </span>
+            <h3>Signals the broker can't read</h3>
+            <p>
+              SDP and ICE payloads are encrypted with AES-GCM using a key derived
+              from the room code with PBKDF2. Media is DTLS-SRTP.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="icon-badge">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+            </span>
+            <h3>Keeps going when the screen locks</h3>
+            <p>
+              A foreground service with CPU and Wi-Fi wake locks keeps discovery,
+              negotiation, and live audio running with the screen off.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="icon-badge">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-4"/><path d="M10 20V9"/><path d="M15 20v-7"/><path d="M20 20V5"/></svg>
+            </span>
+            <h3>A relay when you need one</h3>
+            <p>
+              Strict NAT or mobile data? Add any TURN provider's URL and
+              credentials in Network settings. No rebuild, no accounts in the app.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <span class="icon-badge">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 3 18 18"/><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.2A9.6 9.6 0 0 1 12 5c6 0 10 7 10 7a17 17 0 0 1-2.2 3"/><path d="M6.6 6.6A17 17 0 0 0 2 12s4 7 10 7a9.7 9.7 0 0 0 4.1-.9"/></svg>
+            </span>
+            <h3>Nothing to sign up for</h3>
+            <p>
+              No accounts, analytics, contacts, or call history. The app asks for
+              the microphone and, on Android 13+, permission to show the call
+              notification.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>One code. Up to four phones. That's it.</h2>
+          <p>
+            Signaling is the only thing that needs a third party. It runs over
+            free public MQTT brokers, and every payload is encrypted before it
+            leaves the phone.
+          </p>
+        </div>
+
+        <div class="diagram-wrap reveal">
+          <div class="diagram-scroll">
+            <svg class="diagram" viewBox="0 0 960 460" role="img" aria-labelledby="mesh-title mesh-desc">
+            <title id="mesh-title">Talk2Me connection layout</title>
+            <desc id="mesh-desc">Three phones exchange encrypted signaling through a public MQTT broker and send audio directly to each other over WebRTC.</desc>
+
+            <path class="signal-line" d="M155 300 L400 100"/>
+            <path class="signal-line" d="M480 336 L480 100"/>
+            <path class="signal-line" d="M805 300 L560 100"/>
+
+            <path class="audio-line" d="M250 348 L385 384"/>
+            <path class="audio-line" d="M575 384 L710 348"/>
+            <path class="audio-line" d="M250 326 L710 326"/>
+
+            <text class="line-label" x="480" y="312" text-anchor="middle">audio · direct, peer-to-peer, DTLS-SRTP</text>
+            <text class="line-label" x="176" y="238" text-anchor="middle">encrypted SDP/ICE</text>
+
+            <rect class="node-accent" x="350" y="24" width="260" height="76" rx="16"/>
+            <text class="label" x="480" y="58" text-anchor="middle">Public MQTT broker</text>
+            <text class="sub" x="480" y="80" text-anchor="middle">signaling only · sees ciphertext</text>
+
+            <rect class="node" x="60" y="300" width="190" height="96" rx="18"/>
+            <text class="label" x="155" y="344" text-anchor="middle">Phone A</text>
+            <text class="sub" x="155" y="366" text-anchor="middle">one mesh peer</text>
+
+            <rect class="node" x="385" y="336" width="190" height="96" rx="18"/>
+            <text class="label" x="480" y="380" text-anchor="middle">Phone B</text>
+            <text class="sub" x="480" y="402" text-anchor="middle">one mesh peer</text>
+
+            <rect class="node" x="710" y="300" width="190" height="96" rx="18"/>
+            <text class="label" x="805" y="344" text-anchor="middle">Phone C</text>
+            <text class="sub" x="805" y="366" text-anchor="middle">one mesh peer</text>
+            </svg>
+          </div>
+          <p class="diagram-hint">Swipe the diagram sideways to see all three phones.</p>
+        </div>
+        <p style="color: var(--muted); font-size: 0.88rem; margin-top: 12px;">
+          If a direct path is blocked, an optional TURN relay can forward the
+          already-encrypted audio. It never sees the room code or the plaintext.
+        </p>
+
+        <div class="steps" style="margin-top: 40px;">
+          <article class="step reveal">
+            <h3>Start a call</h3>
+            <p>
+              Generate a room code like <code>K7M2-XQ9F</code>. The code is the
+              only secret: no phone numbers, contacts, or accounts.
+            </p>
+          </article>
+          <article class="step reveal">
+            <h3>Share the code</h3>
+            <p>
+              Send it however you like — SMS, a chat app, or across the table.
+              Everyone who enters it joins the same room.
+            </p>
+          </article>
+          <article class="step reveal">
+            <h3>Talk</h3>
+            <p>
+              Up to four phones connect. On the same Wi-Fi, audio starts in a few
+              seconds; other networks may need a relay.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reliability">
+      <div class="container">
+        <div class="grid grid-2" style="gap: 48px; align-items: start;">
+          <div>
+            <p class="eyebrow">Built for real networks</p>
+            <h2 style="font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-bottom: 14px;">Connects quickly. Recovers quietly.</h2>
+            <p style="color: var(--muted); margin-bottom: 22px;">
+              Group calls have more ways to go wrong than a 1:1 call, so every
+              pair of phones is negotiated and healed independently.
+            </p>
+
+            <ul class="checks">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
+                <span>Brokers are rotated deterministically from the room code, so both phones always try the same one first.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
+                <span>Presence announcements every 500 ms make discovery feel immediate.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
+                <span>Four STUN servers, including port 443, plus TCP candidates for networks that dislike UDP.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
+                <span>Per-pair ICE restarts, renegotiate requests, and connect timeouts instead of silent hangs.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
+                <span>One deterministic initiator per pair, so group calls never collide mid-offer.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
+                <span>The room is capped at four; a fifth phone is told the call is full instead of half-joining.</span>
+              </li>
+            </ul>
+          </div>
+
+          <aside class="card">
+            <p class="eyebrow" style="margin-bottom: 10px;">Under the hood</p>
+            <h3 style="font-size: 1.25rem;">Boring technology, deliberately.</h3>
+            <dl class="kbd-list" style="margin-top: 18px;">
+              <dt>UI</dt><dd>Kotlin + Jetpack Compose</dd>
+              <dt>Media</dt><dd>native WebRTC, audio only, one shared mic track</dd>
+              <dt>Topology</dt><dd>full mesh, one PeerConnection per person</dd>
+              <dt>Signaling</dt><dd>Eclipse Paho over public MQTT (TLS)</dd>
+              <dt>Crypto</dt><dd>PBKDF2 room key, AES-GCM payloads</dd>
+              <dt>Tests</dt><dd>31 JVM unit tests, no instrumentation</dd>
+              <dt>License</dt><dd>MIT</dd>
+            </dl>
+            <p style="margin-top: 20px;">
+              Read the <a href="docs.html">setup and troubleshooting guide</a>,
+              or browse the <a href="https://github.com/lawalTheWest/talk2me">source</a>.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="limitations">
+      <div class="container">
+        <div class="callout">
+          <span class="icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><path d="M12 17.2v.1"/></svg>
+          </span>
+          <div>
+            <h3>What it honestly can't do</h3>
+            <ul>
+              <li><strong>Cross-network calls may need a relay.</strong> Same Wi-Fi usually connects directly. Mobile data, CGNAT, and corporate Wi-Fi often cannot — no app can create a route that does not exist. Add a free TURN account under Network settings.</li>
+              <li><strong>There is no ringing.</strong> Both people open the app and enter the same code. Talk2Me does not run a push service.</li>
+              <li><strong>No video, contacts, or call history.</strong> Audio only, on purpose.</li>
+              <li><strong>Swiping the app from Recents ends the call.</strong> Pressing Back or locking the screen does not.</li>
+              <li><strong>OEM battery managers can still interfere.</strong> Set Talk2Me to unrestricted and allow autostart on MIUI/HyperOS and similar skins.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download" style="border-top: 0; padding-top: 0;">
+      <div class="container">
+        <div class="download">
+          <div>
+            <p class="eyebrow">Get started</p>
+            <h2>Two phones. One code. Try it.</h2>
+            <p>
+              Download the signed APK, install it on both phones, and allow the
+              microphone. No Play Store, no account, no server setup.
+            </p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://github.com/lawalTheWest/talk2me/releases/latest">Download v1.0 APK</a>
+            <a class="btn btn-ghost" href="docs.html#install">Installation guide</a>
+            <small>41 MB · Android 8.0+ · MIT</small>
+          </div>
+        </div>
+        <p style="color: var(--muted); font-size: 0.88rem; margin-top: 14px;">
+          Using different networks or mobile data? Read the
+          <a href="docs.html#network">TURN relay guide</a> before testing.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <img src="assets/logo.svg" width="30" height="30" alt="">
+            Talk2Me
+          </a>
+          <p>A tiny serverless audio-call app for Android. Built with Kotlin, Jetpack Compose, and WebRTC.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#how">How it works</a></li>
+            <li><a href="index.html#limitations">Limitations</a></li>
+            <li><a href="https://github.com/lawalTheWest/talk2me/releases/latest">Download</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Docs</h4>
+          <ul>
+            <li><a href="docs.html#install">Install</a></li>
+            <li><a href="docs.html#network">TURN setup</a></li>
+            <li><a href="docs.html#troubleshooting">Troubleshooting</a></li>
+            <li><a href="docs.html#build">Build from source</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://github.com/lawalTheWest/talk2me">GitHub</a></li>
+            <li><a href="https://github.com/lawalTheWest/talk2me/issues">Issues</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="https://github.com/lawalTheWest/talk2me/blob/main/LICENSE">MIT license</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Talk2Me. Not affiliated with Google, Metered, or Xirsys.</span>
+        <span>No cookies. No analytics. Just static HTML.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
